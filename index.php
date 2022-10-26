@@ -4,18 +4,18 @@ declare(strict_types=1); //declaring strict types
 
 
 $players = [
-    ['name' => 'Dennis Reynolds', 'characteristic' => 'Narcisistic', 'img' => './images/dennisReynolds.jpeg'],
-    ['name' => 'Bill Murray', 'characteristic' => 'funny', 'img' => './images/Danny.jpeg'],
-    ['name' => 'Chris Elliot', 'characteristic' => 'funny', 'img' => './images/dennisReynolds.jpeg'],
+    ['name' => 'Dennis Reynolds', 'characteristic' => 'Narcisistic', 'img' => './images/dennisReynolds.jpeg'], //Array for player selection
+    ['name' => 'Bill Murray', 'characteristic' => 'funny', 'img' => './images/Danny.jpeg'],                     //the img key is fetched by a foorloop 
+    ['name' => 'Chris Elliot', 'characteristic' => 'funny', 'img' => './images/dennisReynolds.jpeg'],           //to print out the images on buttons.
     ['name' => 'Stephen Tobowsky','characteristic' => 'funny', 'img' => './images/dennisReynolds.jpeg'],
 ];
 
 $chosenPlayer = " ";
 
 
-if(isset($_GET['playerIndex'],)){
-    $indexInt = (int)$_GET['playerIndex'];
-    $chosenPlayer = $players[$indexInt]['name'];
+if(isset($_GET['playerIndex'],)){               //$_GET for registering choice of player, registering a string value by a button click and converting -
+    $indexInt = (int)$_GET['playerIndex'];      //the string to an int. the int is saved to $indexInt and the variable is used to fetch the right items
+    $chosenPlayer = $players[$indexInt]['name']; //in the player array.
     
 }
 
@@ -35,21 +35,20 @@ if(isset($_GET['playerIndex'],)){
     <header></header>
     <main>
         <div class="gamewindow">
+            <div class="button-container">
+                <?php for($i = 0; $i <= 3; $i++): ?>
 
-        </div>
-        <div>
-            <?php for($i = 0; $i <= 3; $i++): ?>
+                <form action="index.php" method="get">
 
-            <form action="index.php" method="get">
-
-                <button class="character-button" name="playerIndex" type="submit" value="<?php echo $i ?>">
-                    <img style="height:40px; width:25px;" src="<?php echo $players[$i]['img'] ?>" alt="schoolphoto of Dennis Reynolds"> 
-                </button>
+                    <button class="character-button" name="playerIndex" type="submit" value="<?php echo $i ?>">
+                        <img style="height:40px; width:25px;" src="<?php echo $players[$i]['img'] ?>" alt="schoolphoto of Dennis Reynolds"> 
+                    </button>
 
                 </form>
 
                 <?php endfor ?>
-        </div>    
+            </div>  
+        </div>  
     </main>
 </body>
 
