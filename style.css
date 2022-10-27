@@ -5,6 +5,13 @@
 body {
   margin: 0;
 }
+
+h1, h2, h3, h4 {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
 main {
   display: flex;
   height: 100vh;

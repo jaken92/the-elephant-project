@@ -1,5 +1,5 @@
 <?php 
-//<!-- Using the foorloop below to go through the players-array. Calling the different items in the array by i-index and displaying their ['img'] attribute inside each button. i is also used for the button value as i want to store a different value in $_GET depending on which button/player is clicked. -->
+//<!-- Using the foorloop below to go through the players-array. Calling the different items in the array by i-index and displaying their ['img'] attribute inside each button. i is also used for the button "value" as i want to store a different value in $_GET depending on which button/player is clicked. -->
 declare(strict_types=1); //declaring strict types
 
 //Array for player selection the img key is fetched by a foorloop to print out the images on buttons.
@@ -12,12 +12,15 @@ $players = [
     ['name' => 'Stephen Tobowsky','characteristic' => 'funny', 'img' => './images/dennisReynolds.jpeg', 'difficulty'=> 'Easy'],
 ];
 
-$chosenPlayer = " ";
-
+// setting temporary values to display until given a new value by the $_GET
+$chosenPlayer["name"] = "Player Name";
+$chosenPlayer['img'] = "./images/questionmark.jpeg";
+$chosenPlayer['characteristic'] = "Player Trait";
+$chosenPlayer['difficulty'] = "Level Difficulty";
 
 if(isset($_GET['playerIndex'],)){               //$_GET for registering choice of player, registering a string value by a button click and converting -
     $indexInt = (int)$_GET['playerIndex'];      //the string to an int. the int is saved to $indexInt and the variable is used to fetch the right items
-    $chosenPlayer = $players[$indexInt]['name']; //in the player array.
+    $chosenPlayer = $players[$indexInt];        //in the player array.
     
 }
 
@@ -37,12 +40,17 @@ if(isset($_GET['playerIndex'],)){               //$_GET for registering choice o
     <header></header>
     <main>
         <div class="gamewindow">
+            <h1>Welcome to the serie Quiz!</h1>
+            <h2>Chose which player you want to plays as below</h2>
             <div class="gamescreen"></div>
-            <h3>HEJHEJ</h3>
+            <h3>You are playing as:</h3>
             <div class="playercard-container">
-                <div><p> <?php echo $chosenPlayer ?></p></div>
-                <div><p>asdokasodkasodk</p></div>
-
+                <div><img style="height:14vh; width:11vh;" src="<?php echo $chosenPlayer['img'] ?>" alt="schoolphoto of Dennis Reynolds"></div>
+                <div>
+                    <p>Name:<?php echo $chosenPlayer['name'] ?></p>
+                    <p>Trait:<?php echo $chosenPlayer['characteristic'] ?> </p>
+                    <p>Difficulty:<?php echo $chosenPlayer['difficulty'] ?></p>
+                </div>
             </div>
             <div class="button-container">
 
