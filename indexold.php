@@ -17,7 +17,7 @@ $chosenPlayer = " ";
 
 if(isset($_GET['playerIndex'],)){               //$_GET for registering choice of player, registering a string value by a button click and converting -
     $indexInt = (int)$_GET['playerIndex'];      //the string to an int. the int is saved to $indexInt and the variable is used to fetch the right items
-    $chosenPlayer = $players[$indexInt]['name']; //in the player array.
+    $chosenPlayer = $players[$indexInt]; //in the player array.
     
 }
 
@@ -37,6 +37,12 @@ if(isset($_GET['playerIndex'],)){               //$_GET for registering choice o
     <header></header>
     <main>
         <div class="gamewindow">
+            <div class="current-player-container">
+                <div class="current-player">
+                    <img style="height:14vh; width:11vh;" src="<?php echo $chosenPlayer['img'] ?>" alt="">
+                    <p> <?php echo $chosenPlayer['name'] ?></p>
+                </div>
+            </div>
             <div class="button-container">
 
                 <?php for($i = 0; $i <= 3; $i++): ?>
@@ -45,11 +51,9 @@ if(isset($_GET['playerIndex'],)){               //$_GET for registering choice o
                     <h3><?php echo $players[$i]['difficulty'] ?></h3>
 
                     <form action="index.php" method="get">
-
                         <button class="character-button" name="playerIndex" type="submit" value="<?php echo $i ?>">
                             <img style="height:14vh; width:11vh;" src="<?php echo $players[$i]['img'] ?>" alt="schoolphoto of Dennis Reynolds"> 
                         </button>
-
                     </form>
 
                 </div>
@@ -61,3 +65,4 @@ if(isset($_GET['playerIndex'],)){               //$_GET for registering choice o
 </body>
 
 </html>
+

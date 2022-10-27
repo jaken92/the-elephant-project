@@ -15,20 +15,38 @@ main {
 
 .gamewindow {
   margin-top: 10vh;
-  width: 50vw;
-  height: 40vh;
+  width: 70vw;
+  height: 80vh;
   background-color: beige;
   display: flex;
-  justify-content: center;
-  align-items: end;
+  flex-direction: column;
+  justify-content: end;
 }
 
-.button-container {
-  height: 60px;
+.current-player-container{
+  height: 20vh;
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 1vw;
+  background-color: aquamarine;
+}
+
+.current-player{
+  width: 50%;
+  height: 20vh;
+  background-color: blanchedalmond;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container {
+  height: 25vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 4vw;
+  overflow: hidden;
 }
 img {
   object-fit: cover;
@@ -41,6 +59,16 @@ button {
   padding: 0;
   cursor: pointer;
   outline: inherit;
-  height: 40px;
-  width: 25px;
+  height: 14vh;
+  width: 11vh;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
 }
