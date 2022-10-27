@@ -7,9 +7,9 @@ declare(strict_types=1); //declaring strict types
 
 $players = [
     ['name' => 'Dennis Reynolds', 'characteristic' => 'Narcisistic', 'img' => './images/dennisReynolds.jpeg', 'difficulty'=> 'Easy'], 
-    ['name' => 'Bill Murray', 'characteristic' => 'funny', 'img' => './images/Danny.jpeg', 'difficulty'=> 'Easy'],                    
-    ['name' => 'Chris Elliot', 'characteristic' => 'funny', 'img' => './images/dennisReynolds.jpeg', 'difficulty'=> 'Easy'],           
-    ['name' => 'Stephen Tobowsky','characteristic' => 'funny', 'img' => './images/dennisReynolds.jpeg', 'difficulty'=> 'Easy'],
+    ['name' => 'Frank', 'characteristic' => 'funny', 'img' => './images/Danny.jpeg', 'difficulty'=> 'Easy'],                    
+    ['name' => 'Charlie', 'characteristic' => 'funny', 'img' => './images/dennisReynolds.jpeg', 'difficulty'=> 'Easy'],           
+    ['name' => 'Mac','characteristic' => 'funny', 'img' => './images/dennisReynolds.jpeg', 'difficulty'=> 'Easy'],
 ];
 
 // setting temporary values to display until given a new value by the $_GET
@@ -43,6 +43,7 @@ if(isset($_GET['playerIndex'],)){               //$_GET for registering choice o
             <h1>Welcome to the serie Quiz!</h1>
             <h2>Chose which player you want to plays as below</h2>
             <div class="gamescreen"></div>
+            <div class="game"></div>
             <h3>You are playing as:</h3>
             <div class="playercard-container">
                 <div><img style="height:14vh; width:11vh;" src="<?php echo $chosenPlayer['img'] ?>" alt="schoolphoto of Dennis Reynolds"></div>
