@@ -37,6 +37,13 @@ if(isset($_GET['playerIndex'],)){               //$_GET for registering choice o
     <header></header>
     <main>
         <div class="gamewindow">
+            <div class=playercard-container>
+                <div class="playercard">
+                    <h3>You are playing as</h3>
+                    <div ></div>
+                </div>
+
+            </div>
             <div class="button-container">
 
                 <?php for($i = 0; $i <= 3; $i++): ?>

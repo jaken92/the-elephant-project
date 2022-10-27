@@ -23,7 +23,7 @@ main {
   justify-content: end;
 }
 
-.current-player-container{
+.playercard-container{
   height: 20vh;
   width: 100%;
   display: flex;
@@ -31,13 +31,11 @@ main {
   background-color: aquamarine;
 }
 
-.current-player{
-  width: 50%;
+.playercard{
+  width: 70%;
   height: 20vh;
   background-color: blanchedalmond;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 }
 
 .button-container {
