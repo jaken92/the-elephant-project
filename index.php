@@ -40,7 +40,7 @@ if(isset($_GET['playerIndex'],)){               //$_GET for registering choice o
             <div class="gamescreen"></div>
             <h3>HEJHEJ</h3>
             <div class="playercard-container">
-                <div><img src="./images/dennisReynolds.jpeg" alt=""></div>
+                <div><p> <?php echo $chosenPlayer ?></p></div>
                 <div><p>asdokasodkasodk</p></div>
 
             </div>
