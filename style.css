@@ -31,11 +31,13 @@ main {
   background-color: aquamarine;
 }
 
-.playercard{
-  width: 70%;
-  height: 20vh;
-  background-color: blanchedalmond;
 
+  
+
+.contet-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .button-container {

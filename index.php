@@ -37,11 +37,11 @@ if(isset($_GET['playerIndex'],)){               //$_GET for registering choice o
     <header></header>
     <main>
         <div class="gamewindow">
-            <div class=playercard-container>
-                <div class="playercard">
-                    <h3>You are playing as</h3>
-                    <div ></div>
-                </div>
+            <div class="gamescreen"></div>
+            <h3>HEJHEJ</h3>
+            <div class="playercard-container">
+                <div><img src="./images/dennisReynolds.jpeg" alt=""></div>
+                <div><p>asdokasodkasodk</p></div>
 
             </div>
             <div class="button-container">
