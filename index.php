@@ -1,16 +1,13 @@
 <?php
 //<!-- Using the foorloop below to go through the players-array. Calling the different items in the array by i-index and displaying their ['img'] attribute inside each button. i is also used for the button "value" as i want to store a different value in $_GET depending on which button/player is clicked. -->
-declare(strict_types=1); //declaring strict types
+
+//declaring strict types
 
 //Array for player selection the img key is fetched by a foorloop to print out the images on buttons.
 
 
-$players = [
-    ['name' => 'Dennis Reynolds', 'characteristic' => 'Narcisistic', 'img' => './images/dennisReynolds.jpeg', 'difficulty' => 'Easy'],
-    ['name' => 'Frank', 'characteristic' => 'funny', 'img' => './images/Danny.jpeg', 'difficulty' => 'Easy'],
-    ['name' => 'Charlie', 'characteristic' => 'funny', 'img' => './images/dennisReynolds.jpeg', 'difficulty' => 'Easy'],
-    ['name' => 'Mac', 'characteristic' => 'funny', 'img' => './images/dennisReynolds.jpeg', 'difficulty' => 'Easy'],
-];
+require __DIR__ . '/arrays.php';
+require __DIR__ . '/functions.php';
 
 // setting temporary values to display until given a new value by the $_GET
 $chosenPlayer["name"] = "Player Name";
@@ -18,7 +15,7 @@ $chosenPlayer['img'] = "./images/questionmark.jpeg";
 $chosenPlayer['characteristic'] = "Player Trait";
 $chosenPlayer['difficulty'] = "Level Difficulty";
 
-if (isset($_GET['playerIndex'],)) {               //$_GET for registering choice of player, registering a string value by a button click and converting -
+if (isset($_GET['playerIndex'],)) {               //$_GET for registering choice of player, registering a string value by a button click anconverting -
     $indexInt = (int)$_GET['playerIndex'];      //the string to an int. the int is saved to $indexInt and the variable is used to fetch the right items
     $chosenPlayer = $players[$indexInt];        //in the player array.
 
@@ -44,8 +41,17 @@ if (isset($_GET['playerIndex'],)) {               //$_GET for registering choice
         <div class="gamewindow">
             <h1>Welcome to the serie Quiz!</h1>
             <h2>Chose which player you want to plays as below</h2>
-            <div class="gamescreen"></div>
-            <div class="game"></div>
+            <div class="game">
+                <form class="answer-form" action="05.php" method="post">
+                    <div class="answer-sub">
+                        <label for="answer">Answer:</label>
+                        <input type="text" name="answer" value="Example">
+                    </div>
+                    <div class="answer-sub">
+                        <button class="answer-button" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
             <h3>You are playing as:</h3>
             <div class="playercard-container">
                 <div><img style="height:14vh; width:11vh;" src="<?php echo $chosenPlayer['img'] ?>" alt="schoolphoto of Dennis Reynolds"></div>
