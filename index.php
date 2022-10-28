@@ -11,10 +11,8 @@ require __DIR__ . '/arrays.php';
 require __DIR__ . '/functions.php';
 
 
-$playerScore1 = 0;
-$playerScore2 = 0;
 
-if (isset($_POST['answer1'])) {
+if (isset($_POST['answer1'])) {                                 //calling a function to calculate the score based on the userinput "answer" 1-2-3-4-5.
     $userInput1 = $_POST['answer1'];
     $answer1 = (float)$userInput1;
     $_SESSION['playerScore1'] = scoreCalculator(5.5, $answer1);
@@ -24,8 +22,12 @@ if (isset($_POST['answer2'])) {
     $answer2 = (float)$userInput2;
     $_SESSION['playerScore2'] = scoreCalculator(5.5, $answer2);
 }
+if (isset($_SESSION['playerScore1'], $_SESSION['playerScore2'])) {
+    echo $_SESSION['totalScore'] = $_SESSION['playerScore1'] + $_SESSION['playerScore2'];
+}
 
-echo $totalScore = $_SESSION['playerScore1'] + $_SESSION['playerScore2'];
+
+//$_SESSION['playerScore1']
 
 
 
@@ -48,15 +50,17 @@ if(isset($_POST['answer2'])){
 */
 
 // setting temporary values to display until given a new value by the $_GET
-$chosenPlayer["name"] = "Player Name";
-$chosenPlayer['img'] = "./images/questionmark.jpeg";
-$chosenPlayer['characteristic'] = "Player Trait";
-$chosenPlayer['difficulty'] = "Level Difficulty";
+/*
+$_SESSION['chosenPlayer']["name"] = "Player Name";
+$_SESSION['chosenPlayer']['img'] = "./images/questionmark.jpeg";
+$_SESSION['chosenPlayer']['characteristic'] = "Player Trait";
+$_SESSION['chosenPlayer']['difficulty'] = "Level Difficulty";
+*/
+
 
 if (isset($_GET['playerIndex'],)) {               //$_GET for registering choice of player, registering a string value by a button click anconverting -
     $indexInt = (int)$_GET['playerIndex'];      //the string to an int. the int is saved to $indexInt and the variable is used to fetch the right items
-    $chosenPlayer = $players[$indexInt];        //in the player array.
-
+    $_SESSION['chosenPlayer'] = $players[$indexInt];        //in the player array.
 }
 
 
@@ -103,11 +107,19 @@ if (isset($_GET['playerIndex'],)) {               //$_GET for registering choice
             </div>
             <h3>You are playing as:</h3>
             <div class="playercard-container">
-                <div><img style="height:14vh; width:11vh;" src="<?php echo $chosenPlayer['img'] ?>" alt="schoolphoto of Dennis Reynolds"></div>
+                <div><img style="height:14vh; width:11vh;" src="<?php if (isset($_SESSION['chosenPlayer'])) {
+                                                                    echo $_SESSION['chosenPlayer']['img'];
+                                                                } ?>" alt="schoolphoto of Dennis Reynolds"></div>
                 <div>
-                    <p>Name:<?php echo $chosenPlayer['name'] ?></p>
-                    <p>Trait:<?php echo $chosenPlayer['characteristic'] ?> </p>
-                    <p>Difficulty:<?php echo $chosenPlayer['difficulty'] ?></p>
+                    <p>Name:<?php if (isset($_SESSION['chosenPlayer'])) {
+                                echo $_SESSION['chosenPlayer']['name'];
+                            } ?></p>
+                    <p>Trait:<?php if (isset($_SESSION['chosenPlayer'])) {
+                                    echo $_SESSION['chosenPlayer']['characteristic'];
+                                } ?></p>
+                    <p>Difficulty:<?php if (isset($_SESSION['chosenPlayer'])) {
+                                        echo $_SESSION['chosenPlayer']['difficulty'];
+                                    } ?></p>
                 </div>
             </div>
             <div class="button-container">
