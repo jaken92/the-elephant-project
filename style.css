@@ -26,7 +26,6 @@ main {
 .gamewindow {
   margin-top: 10vh;
   width: 70vw;
-  height: 80vh;
   background-color: beige;
   display: flex;
   flex-direction: column;
@@ -39,11 +38,13 @@ main {
   height: 40vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 .answer-form{
+  width: 40%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
 }
 
@@ -52,10 +53,7 @@ input, label {
 }
 
 .answer-sub {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
 }
 
 .playercard-container {

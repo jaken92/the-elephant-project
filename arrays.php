@@ -8,9 +8,9 @@ $players = [
 ];
 
 $questions = [
-    ['question' => 'What rating does the serie friends have on IMDB ?', 'Answer' => 7.0],
-    ['question' => 'What rating does the serie friends have on IMDB ?', 'Answer' => 7.0],
-    ['question' => 'What rating does the serie friends have on IMDB ?', 'Answer' => 7.0],
-    ['question' => 'What rating does the serie friends have on IMDB ?', 'Answer' => 7.0],
-    ['question' => 'What rating does the serie friends have on IMDB ?', 'Answer' => 7.0],
+    ['question' => 'What rating does the serie friends have on IMDB ?', 'answer' => 7.0],
+    ['question' => 'What rating does the serie friends have on IMDB ?', 'answer' => 7.0],
+    ['question' => 'What rating does the serie friends have on IMDB ?', 'answer' => 7.0],
+    ['question' => 'What rating does the serie friends have on IMDB ?', 'answer' => 7.0],
+    ['question' => 'What rating does the serie friends have on IMDB ?', 'answer' => 7.0],
 ];

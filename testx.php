@@ -7,38 +7,21 @@
 
 session_start();
 
+$answers = array();
+$_SESSION['answers'] = $answers;
+
 require __DIR__ . '/arrays.php';
 require __DIR__ . '/functions.php';
 
 
-$playerScore1 = 0;
-$playerScore2 = 0;
-
 if (isset($_POST['answer1'])) {
-    $userInput1 = $_POST['answer1'];
-    $answer1 = (float)$userInput1;
-    $_SESSION['playerScore1'] = scoreCalculator(5.5, $answer1);
-}
-if (isset($_POST['answer2'])) {
-    $userInput2 = $_POST['answer2'];
-    $answer2 = (float)$userInput2;
-    $_SESSION['playerScore2'] = scoreCalculator(5.5, $answer2);
-}
-
-echo $totalScore = $_SESSION['playerScore1'] + $_SESSION['playerScore2'];
-
-
-
-
-/*Ä
-if (isset($_POST['answer1'])) {
-    $_SESSION['answers'][0] = $_POST;
+    $_SESSION['answers'][] = $_POST;
     print_r($_SESSION['answers']);
 }
 
 if (isset($_POST['answer2'])) {
-    $_SESSION['answers'][1] = $_POST;
-    print_r($_SESSION['answers'][0]);
+    $_SESSION['answers'][] = $_POST;
+    print_r($_SESSION['answers']);
 }
 /*
 if(isset($_POST['answer2'])){
