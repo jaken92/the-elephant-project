@@ -25,7 +25,7 @@ main {
 
 .gamewindow {
   margin-top: 10vh;
-  width: 70vw;
+  width: 90vw;
   background-color: beige;
   display: flex;
   flex-direction: column;
@@ -35,13 +35,13 @@ main {
 .game {
   background-color: black;
   width: 95%;
-  height: 40vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-end;
+
 }
 .answer-form{
-  width: 40%;
+  width: 14vw;
   display: flex;
   flex-direction: column;
   align-items: center;
