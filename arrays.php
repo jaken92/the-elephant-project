@@ -2,7 +2,7 @@
 
 $players = [
     ['name' => 'Walter White', 'characteristic' => 'Narcisistic', 'img' => './images/Walter.jpeg', 'difficulty' => 'Easy'],
-    ['name' => 'Cartman', 'characteristic' => 'funny', 'img' => './images/cartmanmad.jpeg', 'difficulty' => 'Medium'],
+    ['name' => 'Cartman', 'characteristic' => 'funny', 'img' => './images/Danny.jpeg', 'difficulty' => 'Medium'],
     ['name' => 'Frank', 'characteristic' => 'funny', 'img' => './images/Danny.jpeg', 'difficulty' => 'Hard'],
     ['name' => 'SpongeBob', 'characteristic' => 'funny', 'img' => './images/spongebob.png', 'difficulty' => 'Hardest'],
 ];

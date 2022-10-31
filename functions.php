@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+
 require __DIR__ . '/arrays.php';
 
 
@@ -14,25 +15,40 @@ function scoreCalculator(float $answer, string $userAnswer): float {
 
 };
 
-/*
+function finalScore($difficulty, $totalScore): float{
+    if($difficulty === "Hardest"){
+        return $totalScore;
+    }
 
-if(isset($chosenPlayer)){
-    form=form1
-    echo form
-    if(isset($answer1)){
-        form = form2
-        
+    elseif($difficulty === "Hard"){
+        return $totalScore - 2;
+    }
+    elseif($difficulty === "Medium"){
+        return $totalScore - 4;
+    }
+    else{
+        return $totalScore - 6;
     }
 }
 
+function medalValor($finalScore):string{
+    switch (true) {
+        case $finalScore <= 8:
+            $medal = "gold";
+            return $medal;
+            break;
+    
+        case $finalScore <= 10:
+            $medal = "silver";
+            return $medal;
+            break;
+    
+        case $finalScore <= 12:
+            $medal = "bronze";
+            break;
+    
+        case $finalScore > 12;
+            $medal = "no medal";    
+    }
+}
 
-
-<form class="answer-form" action="index.php" method="post">
-<img src="./images/dennisReynolds.jpeg" style="height:14vh; width:11vh;" alt="">
-<div>
-    <label style="color:lime" for="answer">Answer1:</label>
-    <input type="text" name="answer1" value="">
-</div>
-<div>
-
-*/

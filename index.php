@@ -49,8 +49,10 @@ if (isset($_POST['answer4'])) {
     $_SESSION['playerScore4'] = scoreCalculator($forms[3]['correctAnswer'], $answer);
 }
 
-if (isset($_SESSION['playerScore1'], $_SESSION['playerScore2'])) {
-    echo $_SESSION['totalScore'] = $_SESSION['playerScore1'] + $_SESSION['playerScore2'];
+if (isset($_SESSION['playerScore1'], $_SESSION['playerScore2'], $_SESSION['playerScore3'], $_SESSION['playerScore4'])) {
+    $_SESSION['totalScore'] = $_SESSION['playerScore1'] + $_SESSION['playerScore2'] + $_SESSION['playerScore3'] + $_SESSION['playerScore4'];
+    $totalScore = finalScore($_SESSION['chosenPlayer']['difficulty'], $_SESSION['totalScore']);
+    echo medalValor($totalScore);
 }
 /*
 // Setting $form to fetch the first item in the indexed array called $forms. Putting the keyvalues from forms "img" and "inputname" in the html form to display the right image for each question, aswell as setting the input "name".
