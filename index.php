@@ -17,22 +17,42 @@ if (isset($_GET['playerIndex'],)) {               //$_GET for registering choice
 
 //feting the userinput from the from on line 76 with $_POST. The name of the post is set by the forms array called on as form['inputname'].
 //if the user has submitted the input, the IF statements below turns the input into a float and calls on the function scoreCalculator($correctAnswer, $userAnswer). the function returns the players score and it is stored as a Session-variable. 
-if (isset($_POST['answer1'])) {                                
+
+$form = $forms[0];
+if (isset($_POST['answer1'])) {
     $userInput = $_POST['answer1'];
     $answer = (float)$userInput;
-    $_SESSION['playerScore1'] = scoreCalculator(5.5, $answer);
+    $_SESSION['playerScore1'] = scoreCalculator($forms[0]['correctAnswer'], $answer);
+
+    $form = $forms[1];
 }
 
 if (isset($_POST['answer2'])) {
     $userInput = $_POST['answer2'];
     $answer = (float)$userInput;
-    $_SESSION['playerScore2'] = scoreCalculator(5.5, $answer);
+    $_SESSION['playerScore2'] = scoreCalculator($forms[1]['correctAnswer'], $answer);
+
+    $form = $forms[2];
+}
+
+if (isset($_POST['answer3'])) {
+    $userInput = $_POST['answer3'];
+    $answer = (float)$userInput;
+    $_SESSION['playerScore3'] = scoreCalculator($forms[2]['correctAnswer'], $answer);
+
+    $form = $forms[3];
+}
+
+if (isset($_POST['answer4'])) {
+    $userInput = $_POST['answer4'];
+    $answer = (float)$userInput;
+    $_SESSION['playerScore4'] = scoreCalculator($forms[3]['correctAnswer'], $answer);
 }
 
 if (isset($_SESSION['playerScore1'], $_SESSION['playerScore2'])) {
     echo $_SESSION['totalScore'] = $_SESSION['playerScore1'] + $_SESSION['playerScore2'];
 }
-
+/*
 // Setting $form to fetch the first item in the indexed array called $forms. Putting the keyvalues from forms "img" and "inputname" in the html form to display the right image for each question, aswell as setting the input "name".
 $form = $forms[0];
 
@@ -46,6 +66,11 @@ if(isset($_SESSION['playerScore1'])){
 if(isset($_SESSION['playerScore2'])){
     $form = $forms[2];
 }
+
+if(isset($_SESSION['playerScore3'])){
+    $form = $forms[3];
+}
+*/
 
 
 
@@ -70,38 +95,40 @@ if(isset($_SESSION['playerScore2'])){
             <h2>Chose which player you want to plays as below</h2>
             <div class="game">
                 <form class="answer-form" action="index.php" method="post">
-                    <img src="<?php echo $form['img']?>" style="height:14vh; width:11vh;" alt="">
+                    <img src="<?php echo $form['img'] ?>" style="height:14vh; width:11vh;" alt="">
                     <div>
                         <label style="color:lime" for="answer">Answer1:</label>
-                        <input type="text" name="<?php echo $form['inputname']?>" value="">
+                        <input type="text" name="<?php echo $form['inputname'] ?>" value="">
                     </div>
                     <div>
                         <button class="answer-button" type="submit">Submit</button>
                     </div>
                 </form>
-            </div>    
+            </div>
             <h3>You are playing as:</h3>
             <div class="playercard-container">
-                   <?php if (isset($_SESSION['chosenPlayer'])) { ?>
+                <?php if (isset($_SESSION['chosenPlayer'])) : ?>
+                    <!-- prints the "chosenPlayer attributes if chosen player isset" -->
                     <div>
                         <img style="height:14vh; width:11vh;" src="<?php echo $_SESSION['chosenPlayer']['img']; ?>">
                     </div>
-                    <?php } ?>
-                <div>
-                    <p><?php if (isset($_SESSION['chosenPlayer'])) {
-                                echo "Name:" . $_SESSION['chosenPlayer']['name'];
-                            } ?></p>
-                    <p><?php if (isset($_SESSION['chosenPlayer'])) {
-                                    echo "Trait:" . $_SESSION['chosenPlayer']['characteristic'];
-                                } ?></p>
-                    <p><?php if (isset($_SESSION['chosenPlayer'])) {
-                                        echo "Difficulty:" .$_SESSION['chosenPlayer']['difficulty'];
-                                    } ?></p>
-                </div>
+                    <div>
+                        <p>
+                            <?php echo "Name:" . $_SESSION['chosenPlayer']['name']; ?>
+                        </p>
+                        <p>
+                            <?php echo "Trait:" . $_SESSION['chosenPlayer']['characteristic']; ?>
+                        </p>
+                        <p>
+                            <?php echo "Difficulty:" . $_SESSION['chosenPlayer']['difficulty']; ?>
+                        </p>
+                    </div>
+                <?php endif ?>
             </div>
             <div class="button-container">
 
                 <?php for ($i = 0; $i <= 3; $i++) : ?>
+                    <!-- printing out all characters using a forloop -->
 
                     <div class="column">
                         <h3><?php echo $players[$i]['difficulty'] ?></h3>
