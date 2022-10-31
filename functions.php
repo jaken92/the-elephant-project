@@ -30,7 +30,7 @@ function finalScore($difficulty, $totalScore): float{
         return $totalScore - 6;
     }
 }
-
+// inspo switch https://stackoverflow.com/questions/24812851/using-comparison-operators-in-a-php-switch-statement
 function medalValor($finalScore):string{
     switch (true) {
         case $finalScore <= 8:
@@ -45,10 +45,15 @@ function medalValor($finalScore):string{
     
         case $finalScore <= 12:
             $medal = "bronze";
+            return $medal;
             break;
     
         case $finalScore > 12;
-            $medal = "no medal";    
+            $medal = "no medal"; 
+            return $medal;
+            break;   
     }
 }
+
+
 
