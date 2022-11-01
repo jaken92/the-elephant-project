@@ -59,16 +59,16 @@ if (isset($_SESSION['playerScore1'], $_SESSION['playerScore2'], $_SESSION['playe
 
     if ($medal === "gold") {
         shuffle($gold);
-        echo $gold[0];
+        $cheer = $gold[0];
     } elseif ($medal === "silver") {
         shuffle($silver);
-        echo $silver[0];
+        $cheer = $silver[0];
     } elseif ($medal === "bronze") {
         shuffle($bronze);
-        echo $bronze[0];
+        $cheer = $bronze[0];
     } else {
         shuffle($nomedal);
-        echo $nomedal[0];
+        $cheer = $nomedal[0];
     }
 }
 /*
@@ -113,16 +113,23 @@ if(isset($_SESSION['playerScore3'])){
             <h1>Welcome to the serie Quiz!</h1>
             <h2>Chose which player you want to plays as below</h2>
             <div class="game">
+                <?php if(isset($_SESSION['chosenPlayer'])): ?>
                 <form class="answer-form" action="index.php" method="post">
-                    <img src="<?php echo $form['img'] ?>" style="height:14vh; width:11vh;" alt="">
-                    <div>
-                        <label style="color:lime" for="answer">Answer1:</label>
-                        <input type="text" name="<?php echo $form['inputname'] ?>" value="">
+                    <img src="<?php echo $form['img'] ?>" style="height:28vh; width:22vh;" alt="">
+                    <div class="input-container">
+                        <label style="color:lime" for="<?php echo $form['inputname'] ?>"><?php echo $form['question'] ?></label>
+                        <input type="text" name="<?php echo $form['inputname'] ?>" value="<?php echo $form['example'] ?>">
                     </div>
                     <div>
                         <button class="answer-button" type="submit">Submit</button>
                     </div>
                 </form>
+                <?php endif ?>    
+                <?php if(isset($cheer)): ?>
+                <div class="cheer">
+                    <h3><?php echo $cheer ?></h3>
+                </div>
+                <?php endif ?>
             </div>
             <h3>You are playing as:</h3>
             <div class="playercard-container">
