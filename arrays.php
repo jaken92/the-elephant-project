@@ -10,10 +10,14 @@ $players = [
 
 
 $forms = [
-    ['img' => './images/southpark.jpeg', 'inputname' => 'answer1', 'correctAnswer' => 5.5, 'question' => 'Which year did the serie first air?', 'example' => 1982],
-    ['img' => './images/gameofthrones.jpeg', 'inputname' => 'answer2', 'correctAnswer' =>  6.5, 'question' => 'Which year did the serie first air?'],
-    ['img' => './images/rederiet.jpeg', 'inputname' => 'answer3', 'correctAnswer' => 5.5, 'question' => 'Which year did the serie first air?'],
-    ['img' => './images/workaholics.jpeg', 'inputname' => 'answer4', 'correctAnswer' => 5.5, 'question' => 'Which year did the serie first air?'],
+    ['img' => './images/southpark.jpeg', 'inputname' => 'answer1', 'releaseYear' => 1997],
+    ['img' => './images/gameofthrones.jpeg', 'inputname' => 'answer2', 'releaseYear' =>  2018],
+    ['img' => './images/rederiet.jpeg', 'inputname' => 'answer3', 'releaseYear' => 1996],
+    ['img' => './images/workaholics.jpeg', 'inputname' => 'answer4', 'releaseYear' => 2017],
+    ['img' => './images/sopranos.jpeg', 'inputname' => 'answer5', 'releaseYear' => 1999],
+    ['img' => './images/seinfield.jpeg', 'inputname' => 'answer6', 'releaseYear' => 1989],
+    ['img' => './images/thewire.jpeg', 'inputname' => 'answer7', 'releaseYear' => 2002],
+    ['img' => './images/itsalwayssunny.jpeg', 'inputname' => 'answer8', 'releaseYear' => 2005],
 ];
 
 

@@ -20,13 +20,84 @@ if (isset($_GET['playerIndex'],)) {               //$_GET for registering choice
 
 $form = $forms[0];
 if (isset($_POST['answer1'])) {
-    $userInput = $_POST['answer1'];
-    $answer = (float)$userInput;
-    $_SESSION['playerScore1'] = scoreCalculator($forms[0]['correctAnswer'], $answer);
+    $guess = $_POST['answer1'];
+    $guess = (int)$guess;
+    $_SESSION['playerScore1'] = scoreCalculator($forms[0]['releaseYear'], $guess);
 
     $form = $forms[1];
+
+    echo $_SESSION['playerScore1'];
 }
 
+if (isset($_POST['answer2'])) {
+    $guess = $_POST['answer2'];
+    $guess = (int)$guess;
+    $_SESSION['playerScore2'] = scoreCalculator($forms[1]['releaseYear'], $guess);
+
+    $form = $forms[2];
+
+    echo $_SESSION['playerScore2'];
+}
+
+if (isset($_POST['answer3'])) {
+    $guess = $_POST['answer3'];
+    $guess = (int)$guess;
+    $_SESSION['playerScore3'] = scoreCalculator($forms[2]['releaseYear'], $guess);
+
+    $form = $forms[3];
+
+    echo $_SESSION['playerScore3'];
+}
+
+if (isset($_POST['answer4'])) {
+    $guess = $_POST['answer4'];
+    $guess = (int)$guess;
+    $_SESSION['playerScore4'] = scoreCalculator($forms[3]['releaseYear'], $guess);
+
+    $form = $forms[4];
+
+    echo $_SESSION['playerScore4'];
+}
+
+if (isset($_POST['answer5'])) {
+    $guess = $_POST['answer5'];
+    $guess = (int)$guess;
+    $_SESSION['playerScore5'] = scoreCalculator($forms[4]['releaseYear'], $guess);
+
+    $form = $forms[5];
+
+    echo $_SESSION['playerScore5'];
+}
+
+if (isset($_POST['answer6'])) {
+    $guess = $_POST['answer6'];
+    $guess = (int)$guess;
+    $_SESSION['playerScore6'] = scoreCalculator($forms[5]['releaseYear'], $guess);
+
+    $form = $forms[6];
+
+    echo $_SESSION['playerScore6'];
+}
+
+if (isset($_POST['answer7'])) {
+    $guess = $_POST['answer7'];
+    $guess = (int)$guess;
+    $_SESSION['playerScore7'] = scoreCalculator($forms[6]['releaseYear'], $guess);
+
+    $form = $forms[7];
+
+    echo $_SESSION['playerScore7'];
+}
+
+if (isset($_POST['answer8'])) {
+    $guess = $_POST['answer8'];
+    $guess = (int)$guess;
+    $_SESSION['playerScore8'] = scoreCalculator($forms[7]['releaseYear'], $guess);
+
+
+    echo $_SESSION['playerScore8'];
+}
+/*
 if (isset($_POST['answer2'])) {
     $userInput = $_POST['answer2'];
     $answer = (float)$userInput;
@@ -48,10 +119,10 @@ if (isset($_POST['answer4'])) {
     $answer = (float)$userInput;
     $_SESSION['playerScore4'] = scoreCalculator($forms[3]['correctAnswer'], $answer);
 }
+*/
+if (isset($_SESSION['playerScore1'], $_SESSION['playerScore2'], $_SESSION['playerScore3'], $_SESSION['playerScore4'], $_SESSION['playerScore5'], $_SESSION['playerScore6'], $_SESSION['playerScore7'], $_SESSION['playerScore8'])) {
 
-if (isset($_SESSION['playerScore1'], $_SESSION['playerScore2'], $_SESSION['playerScore3'], $_SESSION['playerScore4'])) {
-
-    $_SESSION['totalScore'] = $_SESSION['playerScore1'] + $_SESSION['playerScore2'] + $_SESSION['playerScore3'] + $_SESSION['playerScore4'];
+    $_SESSION['totalScore'] = $_SESSION['playerScore1'] + $_SESSION['playerScore2'] + $_SESSION['playerScore3'] + $_SESSION['playerScore4'] + $_SESSION['playerScore5'] + $_SESSION['playerScore6'] + $_SESSION['playerScore7'] + $_SESSION['playerScore8'];
 
     $totalScore = finalScore($_SESSION['chosenPlayer']['difficulty'], $_SESSION['totalScore']);
 
@@ -113,22 +184,22 @@ if(isset($_SESSION['playerScore3'])){
             <h1>Welcome to the serie Quiz!</h1>
             <h2>Chose which player you want to plays as below</h2>
             <div class="game">
-                <?php if(isset($_SESSION['chosenPlayer'])): ?>
-                <form class="answer-form" action="index.php" method="post">
-                    <img src="<?php echo $form['img'] ?>" style="height:28vh; width:22vh;" alt="">
-                    <div class="input-container">
-                        <label style="color:lime" for="<?php echo $form['inputname'] ?>"><?php echo $form['question'] ?></label>
-                        <input type="text" name="<?php echo $form['inputname'] ?>" value="<?php echo $form['example'] ?>">
+                <?php if (isset($_SESSION['chosenPlayer'])) : ?>
+                    <form class="answer-form" action="index.php" method="post">
+                        <img src="<?php echo $form['img'] ?>" style="height:28vh; width:22vh;" alt="">
+                        <div class="input-container">
+                            <label style="color:lime" for="<?php echo $form['inputname'] ?>">How many years ago did the serie first air?</label>
+                            <input type="text" name="<?php echo $form['inputname'] ?>" value="">
+                        </div>
+                        <div>
+                            <button class="answer-button" type="submit">Submit</button>
+                        </div>
+                    </form>
+                <?php endif ?>
+                <?php if (isset($cheer)) : ?>
+                    <div class="cheer">
+                        <h3><?php echo $cheer ?></h3>
                     </div>
-                    <div>
-                        <button class="answer-button" type="submit">Submit</button>
-                    </div>
-                </form>
-                <?php endif ?>    
-                <?php if(isset($cheer)): ?>
-                <div class="cheer">
-                    <h3><?php echo $cheer ?></h3>
-                </div>
                 <?php endif ?>
             </div>
             <h3>You are playing as:</h3>
