@@ -54,29 +54,22 @@ if (isset($_SESSION['playerScore1'], $_SESSION['playerScore2'], $_SESSION['playe
     $_SESSION['totalScore'] = $_SESSION['playerScore1'] + $_SESSION['playerScore2'] + $_SESSION['playerScore3'] + $_SESSION['playerScore4'];
 
     $totalScore = finalScore($_SESSION['chosenPlayer']['difficulty'], $_SESSION['totalScore']);
-    
-    $medal = medalValor($totalScore);
-    
-    if($medal === "gold"){
-       shuffle($gold);
-       echo $gold[0];
-    }
 
-    elseif($medal === "silver"){
+    $medal = medalValor($totalScore);
+
+    if ($medal === "gold") {
+        shuffle($gold);
+        echo $gold[0];
+    } elseif ($medal === "silver") {
         shuffle($silver);
         echo $silver[0];
-     }
-
-     elseif($medal === "bronze"){
+    } elseif ($medal === "bronze") {
         shuffle($bronze);
         echo $bronze[0];
-     }
-
-     else{
+    } else {
         shuffle($nomedal);
         echo $nomedal[0];
-
-     }
+    }
 }
 /*
 // Setting $form to fetch the first item in the indexed array called $forms. Putting the keyvalues from forms "img" and "inputname" in the html form to display the right image for each question, aswell as setting the input "name".
