@@ -1,14 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
+//Array for player selection the img key is fetched by a foorloop to print out the images on buttons.
 $players = [
-    ['name' => 'Walter White', 'show' => 'Breaking Bad', 'img' => './images/Walter.jpeg', 'difficulty' => 'Easy'],
-    ['name' => 'Cartman', 'show' => 'South Park', 'img' => './images/eric2.jpeg', 'difficulty' => 'Medium'],
-    ['name' => 'Frank', 'show' => 'It´s always sunny in Philadelphia', 'img' => './images/Danny.jpeg', 'difficulty' => 'Hard'],
-    ['name' => 'SpongeBob', 'show' => 'Spongebob Squarepants', 'img' => './images/spongebob.png', 'difficulty' => 'Hardest'],
+    ['name' => 'Walter White', 'show' => 'Breaking Bad', 'img' => './images/Walter.jpeg', 'difficulty' => 'Easy', 'border' => 'green'],
+    ['name' => 'Cartman', 'show' => 'South Park', 'img' => './images/eric2.jpeg', 'difficulty' => 'Medium', 'border' => 'yellow'],
+    ['name' => 'Frank', 'show' => 'It´s always sunny in Philadelphia', 'img' => './images/Danny.jpeg', 'difficulty' => 'Hard', 'border' => 'orange'],
+    ['name' => 'SpongeBob', 'show' => 'Spongebob Squarepants', 'img' => './images/spongebob.png', 'difficulty' => 'Hardest', 'border' => 'red'],
 ];
 
 
-
+//array containing information about each question fetched by the $form variable in index.php.
 $forms = [
     ['img' => './images/southpark.jpeg', 'inputname' => 'answer1', 'releaseYear' => 1997],
     ['img' => './images/gameofthrones.jpeg', 'inputname' => 'answer2', 'releaseYear' =>  2018],
@@ -21,10 +24,12 @@ $forms = [
 ];
 
 
-$gold = ["Wow, nice work, you won the Goldmedal!", "Well played chap, you won the Goldmedal ", "pfff are you cheating?! You won Goldmedal!"];
+//arrays containing different cheering phrases.
+
+$gold = ["Wow, nice work, you won the Goldmedal!", "Well played chap, you won the Goldmedal ", "pfff are you cheating?! You won the Goldmedal!"];
 
 $silver = ["Not bad, you won the Silvermedal!", "You´re pretty good at this arn´t you? You won SILVER!", "Good job human, you won silver!"];
 
-$bronze = ["Not bad, you won the Bronzemedal!", "You won bronze, cheers, i guess..", "You won bronze! Try again for the GOLD!"];
+$bronze = ["Not tooo bad, you won the Bronzemedal!", "You won bronze, cheers, i guess..", "You won bronze! Try again for the GOLD!"];
 
-$nomedal = ["NOT GOOD ENOUGH. TRY AGAIN", "You dont watch alot of series do you? You missed the podium ;("];
+$nomedal = ["NOT GOOD ENOUGH. TRY AGAIN", "You dont watch alot of series, do you? You missed the podium ;("];

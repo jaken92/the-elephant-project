@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  background-color: bisque;
+  background-color: white;
 }
 
 h1,
@@ -19,22 +19,23 @@ h4 {
 main {
   display: flex;
   width: 100wv;
-  background-color: bisque;
+  background-color: white;
   justify-content: center;
 }
 
 .gamewindow {
-  margin-top: 10vh;
   width: 90vw;
-  background-color: beige;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .game {
-  background-color: black;
-  width: 95%;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 70%;
   height: 75vh;
   display: flex;
   flex-direction: column;
@@ -59,15 +60,18 @@ label {
 
 .playercard-container {
   height: 20vh;
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: center;
-  background-color: beige;
+  background-color: white;
   align-items: center;
+  gap: 1vh;
 }
 
 .answer-button {
-  background-color: blue;
+  background-color: beige;
+  border: 2px solid black;
+  border-radius: 10px;
   height: 40px;
   width: 70px;
   margin-top: 3vh;
@@ -81,7 +85,7 @@ label {
 
 .button-container {
   height: 25vh;
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: center;
   gap: 4vw;
@@ -113,13 +117,11 @@ h3 {
 }
 
 h2 {
-  color: lime;
 }
 
 .cheer {
   height: 5vh;
   width: 10vwh;
-  color: lime;
 }
 
 .input-container {
@@ -130,4 +132,14 @@ h2 {
 
 label {
   text-align: center;
+}
+
+.form-img{
+  border-radius: 10px;
+  border: 2px solid black;
+
+}
+
+img{
+  border: 2px;
 }
