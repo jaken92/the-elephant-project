@@ -1,10 +1,10 @@
 <?php
 
 $players = [
-    ['name' => 'Walter White', 'characteristic' => 'Narcisistic', 'img' => './images/Walter.jpeg', 'difficulty' => 'Easy'],
-    ['name' => 'Cartman', 'characteristic' => 'funny', 'img' => './images/Danny.jpeg', 'difficulty' => 'Medium'],
-    ['name' => 'Frank', 'characteristic' => 'funny', 'img' => './images/eric2.jpeg', 'difficulty' => 'Hard'],
-    ['name' => 'SpongeBob', 'characteristic' => 'funny', 'img' => './images/spongebob.png', 'difficulty' => 'Hardest'],
+    ['name' => 'Walter White', 'show' => 'Breaking Bad', 'img' => './images/Walter.jpeg', 'difficulty' => 'Easy'],
+    ['name' => 'Cartman', 'show' => 'South Park', 'img' => './images/eric2.jpeg', 'difficulty' => 'Medium'],
+    ['name' => 'Frank', 'show' => 'It´s always sunny in Philadelphia', 'img' => './images/Danny.jpeg', 'difficulty' => 'Hard'],
+    ['name' => 'SpongeBob', 'show' => 'Spongebob Squarepants', 'img' => './images/spongebob.png', 'difficulty' => 'Hardest'],
 ];
 
 
@@ -16,7 +16,7 @@ $forms = [
     ['img' => './images/workaholics.jpeg', 'inputname' => 'answer4', 'releaseYear' => 2017],
     ['img' => './images/sopranos.jpeg', 'inputname' => 'answer5', 'releaseYear' => 1999],
     ['img' => './images/seinfield.jpeg', 'inputname' => 'answer6', 'releaseYear' => 1989],
-    ['img' => './images/thewire.jpeg', 'inputname' => 'answer7', 'releaseYear' => 2002],
+    ['img' => './images/thewire2.jpeg', 'inputname' => 'answer7', 'releaseYear' => 2002],
     ['img' => './images/itsalwayssunny.jpeg', 'inputname' => 'answer8', 'releaseYear' => 2005],
 ];
 

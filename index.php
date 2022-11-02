@@ -161,7 +161,11 @@ if(isset($_SESSION['playerScore3'])){
     $form = $forms[3];
 }
 */
-
+if(isset($_POST['restart'])){
+    unset($cheer);
+    session_unset();
+    
+}
 
 
 ?>
@@ -185,21 +189,24 @@ if(isset($_SESSION['playerScore3'])){
             <h2>Chose which player you want to plays as below</h2>
             <div class="game">
                 <?php if (isset($_SESSION['chosenPlayer'])) : ?>
-                    <form class="answer-form" action="index.php" method="post">
-                        <img src="<?php echo $form['img'] ?>" style="height:28vh; width:22vh;" alt="">
-                        <div class="input-container">
-                            <label style="color:lime" for="<?php echo $form['inputname'] ?>">How many years ago did the serie first air?</label>
-                            <input type="text" name="<?php echo $form['inputname'] ?>" value="">
-                        </div>
-                        <div>
-                            <button class="answer-button" type="submit">Submit</button>
-                        </div>
-                    </form>
+                <form class="answer-form" action="index.php" method="post">
+                    <img src="<?php echo $form['img'] ?>" style="height:28vh; width:13vw;" alt="">
+                    <div class="input-container">
+                        <label style="color:lime" for="<?php echo $form['inputname'] ?>">How many years ago did the serie first air?</label>
+                        <input type="text" name="<?php echo $form['inputname'] ?>" value="">
+                    </div>
+                    <div>
+                        <button class="answer-button" type="submit">Submit</button>
+                    </div>
+                </form>
                 <?php endif ?>
                 <?php if (isset($cheer)) : ?>
                     <div class="cheer">
                         <h3><?php echo $cheer ?></h3>
                     </div>
+                    <form action="index.php" method="POST">
+                    <button class="answer-button" name="restart" type="submit">Restart</button>
+                </form>
                 <?php endif ?>
             </div>
             <h3>You are playing as:</h3>
@@ -214,7 +221,7 @@ if(isset($_SESSION['playerScore3'])){
                             <?php echo "Name:" . $_SESSION['chosenPlayer']['name']; ?>
                         </p>
                         <p>
-                            <?php echo "Trait:" . $_SESSION['chosenPlayer']['characteristic']; ?>
+                            <?php echo "From:" . $_SESSION['chosenPlayer']['show']; ?>
                         </p>
                         <p>
                             <?php echo "Difficulty:" . $_SESSION['chosenPlayer']['difficulty']; ?>

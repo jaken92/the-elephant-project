@@ -35,28 +35,26 @@ main {
 .game {
   background-color: black;
   width: 95%;
-  height: 55vh;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
-.answer-form{
+.answer-form {
   width: 14vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 3vh;
-
 }
 
-input, label {
+input,
+label {
   display: block;
 }
 
 .answer-sub {
-
 }
 
 .playercard-container {
@@ -68,7 +66,7 @@ input, label {
   align-items: center;
 }
 
-.answer-button{
+.answer-button {
   background-color: blue;
   height: 40px;
   width: 70px;
@@ -112,22 +110,24 @@ button {
 h3 {
   display: flex;
   justify-content: center;
-  
 }
 
-h2{
+h2 {
   color: lime;
 }
 
-.cheer{
-  height:5vh;
+.cheer {
+  height: 5vh;
   width: 10vwh;
   color: lime;
 }
 
-.input-container{
+.input-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
+label {
+  text-align: center;
 }
