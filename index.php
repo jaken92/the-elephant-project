@@ -92,7 +92,6 @@ if (isset($_POST['answer8'])) {
 
     //when the scores has been recalculated, they are added upon eachother into one sum, using the array_sum function. 
     $_SESSION['totalScore'] = array_sum($_SESSION['playerScores']);
-    echo $_SESSION['totalScore'];
 
     // the finalScore function is called with arguments difficulty and totalScore. Since the player already picked a character/difficulty that we stored into $_SESSION['chosenPlayer], we use that and add the key 'difficulty' to fetch the right value in the players array. The second argument is the $_SESSION['totalScore'], containing the sum of all the scores in the $_SESSION['playerScores']- array.
     $totalScore = finalScore($_SESSION['chosenPlayer']['difficulty'], $_SESSION['totalScore']);
@@ -170,7 +169,7 @@ if (isset($_POST['restart'])) {
                 <?php if (isset($_SESSION['chosenPlayer'])) : ?>
                     <!-- prints the $_SESSION['chosenPlayer'] attributes if chosen player isset by the $_GET function" -->
                     <div>
-                        <img style="height:14vh; width:11vh;" src="<?php echo $_SESSION['chosenPlayer']['img']; ?>">
+                        <img class="chosen-img" style="height:14vh; width:11vh;" src="<?php echo $_SESSION['chosenPlayer']['img']; ?>">
                     </div>
                     <div>
                         <p>
@@ -192,7 +191,7 @@ if (isset($_POST['restart'])) {
                         <h3><?php echo $players[$i]['difficulty'] ?></h3>
                         <form action="index.php" method="get">
                             <button class="character-button" name="playerIndex" type="submit" value="<?php echo $i ?>">
-                                <img style="height:14vh; width:11vh;" src="<?php echo $players[$i]['img'] ?>" alt="schoolphoto of Dennis Reynolds">
+                                <img class="chosen-img" style="height:14vh; width:11vh;" src="<?php echo $players[$i]['img'] ?>" alt="">
                             </button>
                         </form>
                     </div>

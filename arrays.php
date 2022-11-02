@@ -14,9 +14,9 @@ $players = [
 //array containing information about each question fetched by the $form variable in index.php.
 $forms = [
     ['img' => './images/southpark.jpeg', 'inputname' => 'answer1', 'releaseYear' => 1997],
-    ['img' => './images/gameofthrones.jpeg', 'inputname' => 'answer2', 'releaseYear' =>  2018],
-    ['img' => './images/rederiet.jpeg', 'inputname' => 'answer3', 'releaseYear' => 1996],
-    ['img' => './images/workaholics.jpeg', 'inputname' => 'answer4', 'releaseYear' => 2017],
+    ['img' => './images/gameofthrones.jpeg', 'inputname' => 'answer2', 'releaseYear' =>  2011],
+    ['img' => './images/rederiet.jpeg', 'inputname' => 'answer3', 'releaseYear' => 1992],
+    ['img' => './images/workaholics.jpeg', 'inputname' => 'answer4', 'releaseYear' => 2011],
     ['img' => './images/sopranos.jpeg', 'inputname' => 'answer5', 'releaseYear' => 1999],
     ['img' => './images/seinfield.jpeg', 'inputname' => 'answer6', 'releaseYear' => 1989],
     ['img' => './images/thewire2.jpeg', 'inputname' => 'answer7', 'releaseYear' => 2002],

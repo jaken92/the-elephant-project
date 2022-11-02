@@ -55,9 +55,6 @@ label {
   display: block;
 }
 
-.answer-sub {
-}
-
 .playercard-container {
   height: 20vh;
   width: 70%;
@@ -140,6 +137,9 @@ label {
 
 }
 
-img{
-  border: 2px;
+
+.chosen-img{
+  border-radius: 10px;
+  border: 2px solid black:
+
 }

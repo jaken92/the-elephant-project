@@ -43,17 +43,17 @@ function medalValor($finalScore): string
             return $medal;
             break;
 
-        case $finalScore <= 10:
+        case $finalScore <= 12:
             $medal = "silver";
             return $medal;
             break;
 
-        case $finalScore <= 14:
+        case $finalScore <= 18:
             $medal = "bronze";
             return $medal;
             break;
 
-        case $finalScore > 14;
+        case $finalScore > 18;
             $medal = "no medal";
             return $medal;
             break;
