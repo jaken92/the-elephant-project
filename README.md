@@ -4,7 +4,7 @@ INSERT MANDATORY GIF
 
 My first project in php. The project was made as an assignment in school, putting to use what i have learned in the passed months. 
 
-petterjakobsson.se/index.php
+https://petterjakobsson.se/index.php
 
 # Installation
 
