@@ -15,6 +15,7 @@ Start a php server with localhost from the map where the files are located, curr
 Code review written by [Anna Brumark](https://github.com/AnnaBrum).
 
 1. `index.php:147,149,150 etc` - <?php echo could be shortened to <?= to minimize php in html code.
+.
 2. `arrays.php:6` - The borders of the players doesn’t seem to display?
 3. `functions.php:37` - Nice to refer to Inspo :)
 4. Does not display too well on mobile device.
